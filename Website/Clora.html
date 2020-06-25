@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title></title>
+ <link rel="stylesheet" type="text/css" href="style.css">
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
+<body>
+
+ 
+
+<div class="overlay">
+<header class="site-header clearfix">
+ <nav>
+  <div class="logo">
+   <b><h1>CLORA</h1></b>
+  </div>
+  <div class="menu"> 
+   <ul>
+    <a href='#'><li>Home</li></a>
+           <select onchange="cattle2(value)" class='cselect' id='selectMe' style="width: 150px;">
+               <option selected disabled>Choose a Cattle</option>
+               <option value='1'>Cattle 1</option>
+               <option value='2'>Cattle 2</option>
+               <option value='3'>Cattle 3</option>
+           </select>
+   </ul>
+  </div>
+ </nav>
+ <section>
+  <div class="leftside"> 
+   <img src="pic1.jpg">
+  </div>
+  <div class="rightside"> 
+   <h1>Our Cattle Website</h1>
+   <p>  Welcome to Cattle Health Monitoring System  </p>
+   <button>Welcome</button>
+  </div>
+ </section>
+</header>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+   
+        function cattle2($i) {
+            document.getElementById('main-heading').innerHTML="CATTLE "+$i+"";
+            if($i==1)
+                {
+                    document.getElementById('temp').src='https://thingspeak.com/channels/1008416/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15';
+                    document.getElementById('hum').src='https://thingspeak.com/channels/1008416/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15';
+                }
+            else if($i==2)
+                {
+                document.getElementById('temp').src='https://thingspeak.com/channels/1008416/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15';
+                document.getElementById('hum').src='https://thingspeak.com/channels/1008416/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15';
+                }
+        }
+    </script>
+    <section id="cattle">
+        <br><br>
+        <div id='c1' class='cattles'>
+         <h1 id='main-heading'>CATTLE 1</h1>
+        <div class="slidershow">
+            <div class="slides">
+                <input type="radio" name="r" id="r1" checked>
+                <input type="radio" name="r" id="r2">
+                <input type="radio" name="r" id="r3">
+                <div class="slide s1">
+                    <h1 align="center" id='headings'>Temperature</h1>
+                    <iframe id="temp" width="700" height="300" src="https://thingspeak.com/channels/1008416/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                </div>
+                <div class="slide">
+                     <h1 align="center" id='headings'>Humidity</h1>
+                   <iframe id="hum" width="700" class='mySlides' height="300" src="https://thingspeak.com/channels/1008416/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                </div>
+                <div class="slide">
+                    <h1 align="center" id='headings'>Heart beat</h1>
+                    <iframe id="heart" width="700" class='mySlides' height="300" src="https://thingspeak.com/channels/1008416/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                </div>
+            </div>
+            <div class="navigation">
+            <label for="r1" class="bar"></label>
+            <label for="r2" class="bar"></label>
+            <label for="r3" class="bar"></label>
+            </div>
+       </div>
+            </div>
+    </section>
+
+</body>
+</html>
